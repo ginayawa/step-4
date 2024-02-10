@@ -53,3 +53,6 @@ def search_product(product_query: ProductQuery = Body(...)):
             "status": "failed"
         }
  
+
+
+# uvicorn main:app --reload
