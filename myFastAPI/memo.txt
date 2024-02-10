@@ -1,0 +1,20 @@
+  仮想環境作成
+  python3 -m venv venv
+
+仮想環境のアクティベイト
+  source venv/bin/activate
+    エラーの場合 ⇨ bash: .venv/bin/activate: Permission denied
+      chmod +x venv/bin/activate
+        ↑実行権限付与
+
+flaskのインストール
+ pip install flask
+
+flaskの起動
+  export FLASK_APP=app_Flask.py
+  flask run --port 5001
+
+  export FLASK_APP=app_FastAPI.py
+  flask run --port 8001
+
+
