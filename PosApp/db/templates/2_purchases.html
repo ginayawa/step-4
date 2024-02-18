@@ -1,0 +1,67 @@
+{% extends "base.html"%} {% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Trade ID</th>
+      <th scope="col">Datetime</th>
+      <th scope="col">Emp CD</th>
+      <th scope="col">Store CD</th>
+      <th scope="col">POS No</th>
+      <th scope="col">Total Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for purchase in purchases %}
+    <tr>
+      <th scope="row">{{purchase.trd_id}}</th>
+      <td>{{purchase.datetime}}</td>
+      <td>{{purchase.emp_cd}}</td>
+      <td>{{purchase.store_cd}}</td>
+      <td>{{purchase.pos_no}}</td>
+      <td>{{purchase.total_amt}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<br/>
+<br/>
+
+
+<form method="post" action="/add_purchase">
+  <div class="row mb-3">
+    <label for="input-purchase-datetime" class="col-sm-2 col-form-label">Purchase Datetime</label>
+    <div class="col-sm-10">
+      <input type="datetime-local" class="form-control" id="input-purchase-datetime" name="input-purchase-datetime">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="input-purchase-emp_cd" class="col-sm-2 col-form-label">Employee Code</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="input-purchase-emp_cd" name="input-purchase-emp_cd">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="input-purchase-store_cd" class="col-sm-2 col-form-label">Purchase Store CD</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="input-purchase-store_cd" name="input-purchase-store_cd">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="input-purchase-pos_no" class="col-sm-2 col-form-label">Purchase POS Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="input-purchase-pos_no" name="input-purchase-pos_no">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="input-purchase-total_amt" class="col-sm-2 col-form-label">Purchase Total Amount</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="input-purchase-total_amt" name="input-purchase-total_amt">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">登録</button>
+</form>
+
+{% endblock %}

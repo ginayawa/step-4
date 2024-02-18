@@ -1,0 +1,57 @@
+{% extends "base.html"%} {% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Prod ID</th>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+    <tr>
+      <th scope="row">{{item.prd_id}}</th>
+      <td>{{item.code}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.price}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<br/>
+<br/>
+
+
+<form method="post" action="/add_item">
+  <div class="row mb-3">
+    <label for="input-item-prd_id" class="col-sm-2 col-form-label">prd_id</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="input-item-prd_id" name="input-item-prd_id">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="input-item-code" class="col-sm-2 col-form-label">CODE</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="input-item-code" name="input-item-code">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="input-item-name" class="col-sm-2 col-form-label">商品名</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="input-item-name" name="input-item-name">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="input-item-price" class="col-sm-2 col-form-label">価格</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="input-item-price" name="input-item-price">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">登録</button>
+</form>
+
+{% endblock %}
