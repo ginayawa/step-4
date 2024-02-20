@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Cart from './Cart'; // Cart コンポーネントのパスを適切に設定してください
 // 型定義インポート
 import { IDtype, Producttype } from '../type';
 
@@ -41,20 +42,24 @@ const OutputAria: React.FC<OutputAriaProps> = ({ productid }) => {
 
     // データフェッチングのステータスを表示
     return (
-        <div className="border border-gray-300 p-5 mx-auto max-w-md">
-            <div className="text-left py-2">
+        <div>
+            <div className="border border-gray-300 p-5 mx-auto max-w-md">
+                <div className="text-left py-2">
                 <div>ステータスコード：{data?.status}</div>
                 {data?.message && (
                     <>
-                        <div>PRO_ID：{data.message.PRD_ID}</div>
-                        <div>PRD_CD：{data.message.PRD_CD}</div>
-                        <div>PRD_NAME：{data.message.PRD_NAME}</div>
-                        <div>PRD_PRICE：{data.message.PRD_PRICE}</div>
+                    <div className="border p-2 my-2">PRD_CD：{data.message.PRD_CD}</div>
+                    <div className="border p-2 my-2">PRD_NAME：{data.message.PRD_NAME}</div>
+                    <div className="border p-2 my-2">PRD_PRICE：{data.message.PRD_PRICE}</div>
                     </>
                 )}
+                </div>
             </div>
+            {/* Cart コンポーネントを追加。data?.message が存在する場合のみ Cart コンポーネントを表示 */}
+            {data?.message && <Cart product={data.message} />}
         </div>
     );
 }
 
 export default OutputAria;
+
