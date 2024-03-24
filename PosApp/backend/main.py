@@ -62,6 +62,10 @@ async def purchase(purchase: schemas.Purchase, db: Session = Depends(get_db)):
 async def create_member(member: schemas.createMember, db: Session = Depends(get_db)):
   return crud.create_member(db=db,member=member)
 
+@app.get('/trans/{mbr_id}')
+async def read_trans(mbr_id: int ,db: Session = Depends(get_db)):
+  trans = crud.get_trans(db, mbr_id)
+  return trans
 
 
 

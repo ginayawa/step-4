@@ -1,6 +1,6 @@
-export const fetchItem = async (prdCd: string) => {
+export const fetchTrans = async (mbrId: number) => {
   try {
-    const res = await fetch(`http://127.0.0.1:8000/items/${prdCd}`);
+    const res = await fetch(`http://127.0.0.1:8000/trans/${mbrId}`);
     const data = await res.json();
     return data;
   } catch (error) {
@@ -8,7 +8,3 @@ export const fetchItem = async (prdCd: string) => {
     return null;
   }
 };
-
-
-
-

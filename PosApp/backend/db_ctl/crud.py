@@ -77,3 +77,6 @@ def create_member(db: Session, member: schemas.createMember):
   db.refresh(db_member)
   return db_member
   
+
+def get_trans(db: Session, mbr_id: str):
+  return db.query(models.Tran).filter(models.Tran.mbr_id==mbr_id).all()
