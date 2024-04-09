@@ -7,7 +7,7 @@ export const handlePurchase = async (items: any[]) => {
   const toatalAmt = items.reduce((total, addedItem) => total + parseInt(addedItem.prd_price), 0);
 
   const purchaseData = {
-    mbr_id: 1,
+    mbr_id: 3,
     emp_cd: '1234',
     store_cd: 'C01',
     pos_no: '001',

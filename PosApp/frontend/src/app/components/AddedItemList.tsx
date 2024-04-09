@@ -21,10 +21,10 @@ const AddedItemsList: React.FC<AddedItemsListProps> = ({ items }) => {
         role="region"
       >
         <h2 id="added-items-heading" className="font-bold text-blue-700">
-          Added Items:
+          購入商品:
         </h2>
         {itemsToShow.length === 0 ? (
-          <p>No items added</p>
+          <p>購入商品はありません</p>
         ) : (
           itemsToShow.map((addedItem, index) => (
             <div key={index}>

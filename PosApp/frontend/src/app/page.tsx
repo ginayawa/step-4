@@ -62,7 +62,7 @@ const handleFetchTrans = async () => {
       <div className="flex flex-col items-center justify-start min-h-screen bg-white">
         <div className="flex items-center border-b border-blue-500 py-2">
           <label className="text-green-700 font-bold">
-            Product Cd:
+            商品コード:
             <input 
               type="text"
               className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -76,14 +76,14 @@ const handleFetchTrans = async () => {
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full w-full mt-4"
             onClick={handleFetchItem}
           >
-            Search Item
+            商品を検索
           </button>
           <ItemDetails item={item} /> 
         </div>
         <div>
           <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full mt-4"
-          onClick={addItem}>Add</button>
+          onClick={addItem}>追加</button>
         </div>
 
         <div>
@@ -91,7 +91,7 @@ const handleFetchTrans = async () => {
           <div>
             <button 
             className='bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full w-full mt-4'
-            onClick={handlePurchaseClick}>Purchase</button>
+            onClick={handlePurchaseClick}>購入</button>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ const handleFetchTrans = async () => {
           <div>
             <div className="flex justify-center">
               <label className="text-red-700 font-bold">
-                Product Cd:
+                会員ID:
                 <input 
                   type="number"
                   className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -112,7 +112,7 @@ const handleFetchTrans = async () => {
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-full mt-4"
               onClick={handleFetchTrans}
             >
-              Search Item
+              これまでの購入履歴を確認
             </button>
             <SearchTransList trans={trans}/>
           </div>
