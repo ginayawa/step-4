@@ -31,7 +31,7 @@ const SearchTransList: React.FC<SearchTransProps> = ({ trans }) => {
               <p className="my-2 font-bold">残り控除可能額: <span className="underline">{88000 - totalAmt}</span>円</p>
             </>
           )}
-          {totalAmt > 88000 && <p className="my-2 font-bold"><span className="underline">88000</span>円が控除対象です。</p>}
+          {totalAmt - 12000 > 88000 && <p className="my-2 font-bold"><span className="underline">88000</span>円が控除対象です。</p>}
         <br/>
         <h2 className="font-bold text-red-700">  
           対象製品の購入金額合計:

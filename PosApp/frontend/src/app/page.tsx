@@ -99,7 +99,7 @@ const handleFetchTrans = async () => {
           <div>
             <div className="flex justify-center">
               <label className="text-red-700 font-bold">
-                会員ID:
+                商品コード:
                 <input 
                   type="number"
                   className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -112,7 +112,7 @@ const handleFetchTrans = async () => {
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-full mt-4"
               onClick={handleFetchTrans}
             >
-              これまでの購入履歴を確認
+              検索
             </button>
             <SearchTransList trans={trans}/>
           </div>
