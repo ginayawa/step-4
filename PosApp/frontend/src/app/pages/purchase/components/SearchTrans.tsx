@@ -1,6 +1,5 @@
 
 import React from "react";
-import { fetchTrans } from '../utils/fetchTrans';
 
 interface SearchTransProps {
   trans: {
