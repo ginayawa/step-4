@@ -2,15 +2,24 @@
 import React from "react";
 import { useEffect,useState } from "react";
 
+import Image from 'next/image'
+import Cart from '../../public/CartShopping.png'
+import DrugsSample from '../../public/DrugsSample.png'
+
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import ItemDetails from './components/ItemDetails';
 import AddedItemsList from "./components/AddedItemList";
 import TitleBar from "./components/TitleBar";
 import SearchTransList from "./components/SerchTrans";
 
+
 import { fetchItem } from "./utils/fetchItem";
 import { handlePurchase } from "./utils/purchaseApi";
 import { fetchTrans } from "./utils/fetchTrans";
 import { types } from "util";
+import Head from "next/head";
 
 
 
@@ -57,8 +66,9 @@ const handleFetchTrans = async () => {
     
 
   return (
-    <main >
-      <TitleBar/>
+    <main className="mx-auto max-w-xl">
+      <Header/>
+      {/* <TitleBar/> */}
       <div className="flex flex-col items-center justify-start min-h-screen bg-white">
         <div className="flex items-center border-b border-blue-500 py-2">
           <label className="text-green-700 font-bold">
@@ -118,6 +128,7 @@ const handleFetchTrans = async () => {
           </div>
         </div>
       </div>
+      <Footer/>
 
     </main>
   );

@@ -20,15 +20,10 @@ const ItemDetails: React.FC<ItemDetailsProps> = ({ item }) => {
   }
 
   return (
-    <div className="w-full max-w-md p-4 border-2 border-green-500 rounded my-4 bg-teal-50" >
-      <p>商品ID: {item.prd_id}</p>
-      <p>商品CD: {item.prd_cd}</p>
+    <div className="w-full max-w-md p-4  rounded my-4 bg-[rgba(123,97,255,0.23)]" >
       <p>商品名: {item.prd_name}</p>
-      <p>包装: {item.pac_unit}</p>
-      <p>製造販売業者: {item.mnf_company}</p>
       <p>有効成分: {item.ingrdnt}</p>
       <p>金額: {item.prd_price}</p>
-      <p>セルフメディケーション税制優遇: {item.smd_yn_fg}</p>
     </div>
   );
 };
